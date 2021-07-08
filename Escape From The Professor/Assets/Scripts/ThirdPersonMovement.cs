@@ -11,12 +11,23 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
+
+    private Animator ch_animator;
+
+    void Start()
+    {
+    	ch_animator = GetComponent<Animator>();
+    }
     
     // Update is called once per frame
     void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+
+        if (horizontal != 0 || vertical != 0)ch_animator.SetBool("state", true);
+        else ch_animator.SetBool("state", false);
+
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
         if (direction.magnitude >= 0.1f)

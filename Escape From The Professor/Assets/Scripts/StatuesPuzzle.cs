@@ -16,30 +16,32 @@ public class StatuesPuzzle : MonoBehaviour
     public float journeyLength;
 
     public float distCovered;
+    public int frame = 0;
 
     void Start()
     {
-        startTime = Time.time;
         journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
     }
+    
     // Update is called once per frame
     void Update()
     {
-        LiftDoor();
         if (leftScript.properPos && centerScript.properPos && rightScript.properPos)
         {
-            Debug.Log("i am opened");
-            // LiftDoor();
+            frame += 1;
+            if (frame == 1)
+            {
+                startTime = Time.time;
+            }
+            LiftDoor();
         }
     }
 
     void LiftDoor()
     {
         distCovered = (Time.time - startTime) * speed;
-        if (distCovered < journeyLength)
+        if (door.transform.position.y < endMarker.position.y)
         {
-            Debug.Log(door.transform.position.y);
-            Debug.Log(endMarker.position.y);
             float fractionOfJourney = distCovered / journeyLength;
             door.transform.position = Vector3.Lerp(startMarker.position, endMarker.position, fractionOfJourney);
         }
