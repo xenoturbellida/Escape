@@ -25,11 +25,11 @@ public class StatuesPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // LiftDoor();
+        LiftDoor();
         if (leftScript.properPos && centerScript.properPos && rightScript.properPos)
         {
             Debug.Log("i am opened");
-            LiftDoor();
+            // LiftDoor();
         }
     }
 
