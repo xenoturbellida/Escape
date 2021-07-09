@@ -8,6 +8,7 @@ public class MouseClick : MonoBehaviour
     // [SerializeField] private float[] Angle;
 	
 	public float properAngle;
+	public float properAngleTwo;
 	   
 	public float smooth = 95.0f;
 

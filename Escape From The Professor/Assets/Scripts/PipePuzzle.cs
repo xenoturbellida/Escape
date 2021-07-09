@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PipePuzzle : MonoBehaviour
 {
@@ -24,6 +25,11 @@ public class PipePuzzle : MonoBehaviour
 
 
 	// Start is called before the first frame update
+	public void NextLevel(int _sceneNumber)
+	{
+		SceneManager.LoadScene(_sceneNumber);
+	}
+	
     void Start()
     {
 	    
@@ -37,7 +43,7 @@ public class PipePuzzle : MonoBehaviour
 	    
 	    foreach (MouseClick i in Data)
 	    {
-		    if (Quaternion.Angle(i.transform.rotation, Quaternion.Euler(0f, 0f, i.properAngle)) < 1f)
+		    if ((Quaternion.Angle(i.transform.rotation, Quaternion.Euler(0f, 0f, i.properAngle)) < 1f) || (Quaternion.Angle(i.transform.rotation, Quaternion.Euler(0f, 0f, i.properAngleTwo)) < 1f))
 			    i.position = true;
 		    else
 		    {
@@ -52,6 +58,7 @@ public class PipePuzzle : MonoBehaviour
 	        tenScript.position && elevenScript.position)
 	    {
 		    result = true;
+		    NextLevel(1);
 
 	    }
 
