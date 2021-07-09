@@ -23,9 +23,13 @@ public class Pipe : MonoBehaviour
         {
             _camera.SetActive(true);
             _person.SetActive(false);
-            //ch_camera.enabled = !ch_camera.enabled;
-            //_camera.enabled = !_camera.enabled;
-            //Debug.Log("Yes");
+
+        }
+
+        if (isRotated && Input.GetKeyDown(KeyCode.Escape))
+        {
+            _camera.SetActive(false);
+            _person.SetActive(true);
         }
     }
     private void OnTriggerEnter(Collider other)
