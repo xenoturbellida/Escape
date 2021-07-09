@@ -7,14 +7,13 @@ public class Pipe : MonoBehaviour
 {
     public bool isRotated;
 
-    private Camera ch_camera;
-    private Camera _camera;
+    public GameObject _person;
+    public GameObject _camera;
     
     // Start is called before the first frame update
     void Start()
     {
-        ch_camera = GetComponent<Camera>();
-        ch_camera = Camera.main;
+        
     }
 
     // Update is called once per frame
@@ -22,9 +21,11 @@ public class Pipe : MonoBehaviour
     {
         if (isRotated && Input.GetKeyDown(KeyCode.F))
         {
-            ch_camera.enabled = !ch_camera.enabled;
-            _camera.enabled = !_camera.enabled;
-            Debug.Log("Yes");
+            _camera.SetActive(true);
+            _person.SetActive(false);
+            //ch_camera.enabled = !ch_camera.enabled;
+            //_camera.enabled = !_camera.enabled;
+            //Debug.Log("Yes");
         }
     }
     private void OnTriggerEnter(Collider other)
