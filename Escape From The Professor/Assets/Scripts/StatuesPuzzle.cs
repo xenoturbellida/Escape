@@ -8,6 +8,10 @@ public class StatuesPuzzle : MonoBehaviour
     public StatueRotation centerScript;
     public StatueRotation rightScript;
 
+    public CapsuleCollider leftCollider;
+    public CapsuleCollider CenterCollider;
+    public CapsuleCollider RightCollider;
+
     public GameObject door;
     public Transform startMarker;
     public Transform endMarker;
@@ -34,6 +38,7 @@ public class StatuesPuzzle : MonoBehaviour
                 startTime = Time.time;
             }
             LiftDoor();
+            ForbidRotating();
         }
     }
 
@@ -45,5 +50,12 @@ public class StatuesPuzzle : MonoBehaviour
             float fractionOfJourney = distCovered / journeyLength;
             door.transform.position = Vector3.Lerp(startMarker.position, endMarker.position, fractionOfJourney);
         }
+    }
+
+    void ForbidRotating()
+    {
+        leftCollider.enabled = false;
+        CenterCollider.enabled = false;
+        RightCollider.enabled = false;
     }
 }

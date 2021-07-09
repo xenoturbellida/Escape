@@ -1803,7 +1803,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784930601}
-  m_LocalRotation: {x: 0.11033549, y: 0.0000000042753316, z: -4.746186e-10, w: 0.99389446}
+  m_LocalRotation: {x: 0.11033549, y: -0.0000000042753316, z: 4.746186e-10, w: 0.99389446}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2536,6 +2536,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &1164558617 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 5886453337506176707, guid: eb5cea0523209f14895b1e756807fb19, type: 3}
+  m_PrefabInstance: {fileID: 1302610346}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1214420462
 GameObject:
   m_ObjectHideFlags: 0
@@ -2587,6 +2592,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &1290103654 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 5886453335849867977, guid: eb5cea0523209f14895b1e756807fb19, type: 3}
+  m_PrefabInstance: {fileID: 1302610346}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1302610346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2686,6 +2696,18 @@ PrefabInstance:
       propertyPath: startMarker
       value: 
       objectReference: {fileID: 398510645}
+    - target: {fileID: 5886453336296002343, guid: eb5cea0523209f14895b1e756807fb19, type: 3}
+      propertyPath: leftCollider
+      value: 
+      objectReference: {fileID: 1436173794}
+    - target: {fileID: 5886453336296002343, guid: eb5cea0523209f14895b1e756807fb19, type: 3}
+      propertyPath: RightCollider
+      value: 
+      objectReference: {fileID: 1290103654}
+    - target: {fileID: 5886453336296002343, guid: eb5cea0523209f14895b1e756807fb19, type: 3}
+      propertyPath: CenterCollider
+      value: 
+      objectReference: {fileID: 1164558617}
     - target: {fileID: 5886453336394345838, guid: eb5cea0523209f14895b1e756807fb19, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2908,6 +2930,11 @@ MonoBehaviour:
   cam: {fileID: 806188543}
   speed: 6
   turnSmoothTime: 0.1
+--- !u!136 &1436173794 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 5886453335884670522, guid: eb5cea0523209f14895b1e756807fb19, type: 3}
+  m_PrefabInstance: {fileID: 1302610346}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1538096311
 GameObject:
   m_ObjectHideFlags: 0
