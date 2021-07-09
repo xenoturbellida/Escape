@@ -9,11 +9,16 @@ public class LockCameraTrigger : MonoBehaviour
 
     public GameObject cam;
     public bool cameraIsActive = false;
+    public Lock lockPuzzle;
 
     // Update is called once per frame
     void Update()
     {
-        if (near && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Escape)))
+        if (lockPuzzle.wasSolved)
+        {
+            cam.SetActive(false);
+        }
+        else if (near && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Escape)))
         {
             cameraIsActive = !cameraIsActive;
             cam.SetActive(cameraIsActive);
