@@ -20,11 +20,15 @@ public class StatueRotation : MonoBehaviour
     private Quaternion targetRot;
 
     public bool properPos;
-    
+
+    private AudioSource audio;
+
     void Start()
     {
         currentRot = transform.eulerAngles;
         targetRot = transform.rotation;
+
+        audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -42,9 +46,10 @@ public class StatueRotation : MonoBehaviour
 
         if (isRotated && Input.GetKeyDown(KeyCode.F))
         {
+            audio.Play();
+
             targetRot = Quaternion.Euler(0f, rotationStep, 0f) * targetRot;
         }
-
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, smooth * Time.deltaTime);
     }
     

@@ -20,6 +20,11 @@ public class Lock : MonoBehaviour
 
     public Text codeText;
     private string _currentText = "";
+    public string properKey = "2908";
+
+    public Animator leftDoor;
+    public Animator rightDoor;
+    public bool wasSolved;
 
     // Start is called before the first frame update
     void Start()
@@ -43,15 +48,22 @@ public class Lock : MonoBehaviour
     {
         codeText.text = _currentText;
 
-        if (_currentText == "1234")
+        if (_currentText == properKey)
         {
-            Debug.Log("Success!!!");
+            wasSolved = true;
+            OpenDoor();
         }
 
         if (_currentText.Length >= 4)
         {
             _currentText = "";
         }
+    }
+
+    void OpenDoor()
+    {
+        leftDoor.SetBool("isOpen", true);
+        rightDoor.SetBool("isOpen", true);
     }
 
     public void AddDigit(string digit)
