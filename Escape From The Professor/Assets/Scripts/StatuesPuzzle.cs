@@ -22,9 +22,12 @@ public class StatuesPuzzle : MonoBehaviour
     public float distCovered;
     public int frame = 0;
 
+    private AudioSource audio;
+
     void Start()
     {
         journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
+        audio = door.GetComponent<AudioSource>();
     }
     
     // Update is called once per frame
@@ -36,6 +39,8 @@ public class StatuesPuzzle : MonoBehaviour
             if (frame == 1)
             {
                 startTime = Time.time;
+                
+                audio.Play();
             }
             LiftDoor();
             ForbidRotating();
