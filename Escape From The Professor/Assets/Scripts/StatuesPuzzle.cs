@@ -24,6 +24,8 @@ public class StatuesPuzzle : MonoBehaviour
 
     private AudioSource audio;
 
+    public bool wasSolved;
+
     void Start()
     {
         journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
@@ -35,6 +37,7 @@ public class StatuesPuzzle : MonoBehaviour
     {
         if (leftScript.properPos && centerScript.properPos && rightScript.properPos)
         {
+            wasSolved = true;
             frame += 1;
             if (frame == 1)
             {
