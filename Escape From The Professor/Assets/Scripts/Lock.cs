@@ -28,6 +28,19 @@ public class Lock : MonoBehaviour
 
     public AudioSource openDoorSound;
 
+    private AudioSource sound1;
+    private AudioSource sound2;
+    private AudioSource sound3;
+    private AudioSource sound4;
+    private AudioSource sound5;
+    private AudioSource sound6;
+    private AudioSource sound7;
+    private AudioSource sound8;
+    private AudioSource sound9;
+    private AudioSource soundAsterisk;
+    private AudioSource sound0;
+    private AudioSource soundHash;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +56,19 @@ public class Lock : MonoBehaviour
         buttonAsterisk.onClick.AddListener(ButtonClickedAsterisk);
         button0.onClick.AddListener(ButtonClicked0);
         buttonHash.onClick.AddListener(ButtonClickedHash);
+
+        sound1 = button1.GetComponent<AudioSource>();
+        sound2 = button2.GetComponent<AudioSource>();
+        sound3 = button3.GetComponent<AudioSource>();
+        sound4 = button4.GetComponent<AudioSource>();
+        sound5 = button5.GetComponent<AudioSource>();
+        sound6 = button6.GetComponent<AudioSource>();
+        sound7 = button7.GetComponent<AudioSource>();
+        sound8 = button8.GetComponent<AudioSource>();
+        sound9 = button9.GetComponent<AudioSource>();
+        soundAsterisk = buttonAsterisk.GetComponent<AudioSource>();
+        sound0 = button0.GetComponent<AudioSource>();
+        soundHash = buttonHash.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -76,73 +102,73 @@ public class Lock : MonoBehaviour
 
     private void ButtonClicked1()
     {
-        Debug.Log(button1.name);
+        sound1.Play();
         AddDigit("1");
     }
     
     private void ButtonClicked2()
     {
-        Debug.Log(button2.name);
+        sound2.Play();
         AddDigit("2");
     }
     
     private void ButtonClicked3()
     {
-        Debug.Log(button3.name);
+        sound3.Play();
         AddDigit("3");
     }
     
     private void ButtonClicked4()
     {
-        Debug.Log(button4.name);
+        sound4.Play();
         AddDigit("4");
     }
     
     private void ButtonClicked5()
     {
-        Debug.Log(button5.name);
+        sound5.Play();
         AddDigit("5");
     }
     
     private void ButtonClicked6()
     {
-        Debug.Log(button6.name);
+        sound6.Play();
         AddDigit("6");
     }
     
     private void ButtonClicked7()
     {
-        Debug.Log(button7.name);
+        sound7.Play();
         AddDigit("7");
     }
     
     private void ButtonClicked8()
     {
-        Debug.Log(button8.name);
+        sound8.Play();
         AddDigit("8");
     }
     
     private void ButtonClicked9()
     {
-        Debug.Log(button9.name);
+        sound9.Play();
         AddDigit("9");
     }
     
     private void ButtonClickedAsterisk()
     {
-        Debug.Log(buttonAsterisk.name);
+        soundAsterisk.Play();
         AddDigit("*");
     }
     
     private void ButtonClicked0()
     {
-        Debug.Log(button0.name);
+        sound0.Play();
         AddDigit("0");
     }
     
     private void ButtonClickedHash()
     {
-        Debug.Log(buttonHash.name);
+        soundHash.Play();
         AddDigit("#");
     }
 }
