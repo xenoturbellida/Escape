@@ -26,6 +26,8 @@ public class Lock : MonoBehaviour
     public Animator rightDoor;
     public bool wasSolved;
 
+    public AudioSource openDoorSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +52,7 @@ public class Lock : MonoBehaviour
 
         if (_currentText == properKey)
         {
+            openDoorSound.Play();
             wasSolved = true;
             OpenDoor();
         }
