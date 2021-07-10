@@ -9,6 +9,8 @@ public class Pipe : MonoBehaviour
 
     public GameObject _person;
     public GameObject _camera;
+
+    public GameObject prompt;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class Pipe : MonoBehaviour
         {
             _camera.SetActive(true);
             _person.SetActive(false);
+            prompt.SetActive(false);
 
         }
 
@@ -35,10 +38,12 @@ public class Pipe : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         isRotated = true;
+        prompt.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
         isRotated = false;
+        prompt.SetActive(false);
     }
 }
