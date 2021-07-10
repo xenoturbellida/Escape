@@ -15,7 +15,8 @@ public class TriggerAnimatorControl : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider col)
 	{
-		if (col.tag == "Player") {
+		if (col.tag == "Player")
+		{
 			gameObjects.GetComponent<Animator> ().SetTrigger (nameTrigger);
 		}
 	}
