@@ -19,16 +19,21 @@ public class MouseClick : MonoBehaviour
 
     private Quaternion targetRot;
 
+    private AudioSource rotatingSound;
+
     void Start()
     {
 	    targetRot = transform.rotation;
+	    rotatingSound = GetComponent<AudioSource>();
     }
 
 
     void OnMouseDown()
     {
-
-        transform.rotation = Quaternion.Euler(0,0, rotationStep) * transform.rotation;
-
+	    if (!rotatingSound.isPlaying)
+	    {
+		    rotatingSound.Play();
+	    }
+	    transform.rotation = Quaternion.Euler(0,0, rotationStep) * transform.rotation;
     }
 }
