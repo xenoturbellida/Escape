@@ -10,7 +10,7 @@ public class Note : MonoBehaviour
     public GameObject player;
     public bool needToShowNote;
     public bool near;
-    public bool noteWasRead;
+    public bool wasRead;
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class Note : MonoBehaviour
     {
         if (near && Input.GetKeyDown(KeyCode.F))
         {
-            noteWasRead = true;
+            wasRead = true;
             needToShowNote = !needToShowNote;
             player.SetActive(!needToShowNote);
             note.SetActive(needToShowNote);
