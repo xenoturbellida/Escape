@@ -6,14 +6,11 @@ using UnityEngine;
 public class Note : MonoBehaviour
 {
     public GameObject prompt;
-
-    public bool needToShowNote = false;
-    public bool needToShowPlayer;
-
     public GameObject note;
-
     public GameObject player;
+    public bool needToShowNote;
     public bool near;
+    public bool noteWasRead;
 
     void Start()
     {
@@ -27,6 +24,7 @@ public class Note : MonoBehaviour
     {
         if (near && Input.GetKeyDown(KeyCode.F))
         {
+            noteWasRead = true;
             needToShowNote = !needToShowNote;
             player.SetActive(!needToShowNote);
             note.SetActive(needToShowNote);
