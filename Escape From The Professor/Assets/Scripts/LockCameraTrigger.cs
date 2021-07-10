@@ -13,6 +13,7 @@ public class LockCameraTrigger : MonoBehaviour
     public Lock lockPuzzle;
     public GameObject prompt;
     public GameObject player;
+    public int frame = 0;
 
     void Start()
     {
@@ -24,9 +25,14 @@ public class LockCameraTrigger : MonoBehaviour
     {
         if (lockPuzzle.wasSolved)
         {
-            prompt.SetActive(false);
-            cam.SetActive(false);
-            player.SetActive(true);
+            frame += 1;
+            if (frame == 1)
+            {
+                prompt.SetActive(false);
+                cam.SetActive(false);
+                player.SetActive(true);
+                GetComponent<BoxCollider>().enabled = false;
+            }
         }
         else if (near && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Escape)))
         {
@@ -51,5 +57,4 @@ public class LockCameraTrigger : MonoBehaviour
         near = false;
         prompt.SetActive(false);
     }
-    
 }
