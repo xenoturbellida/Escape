@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ExitGame : MonoBehaviour
 {
     public Button exitButton;
+    public AudioSource clickSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class ExitGame : MonoBehaviour
     // Update is called once per frame
     void TaskOnClick()
     {
+        clickSound.Play();
         Application.Quit();
     }
 }
