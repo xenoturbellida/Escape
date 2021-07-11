@@ -7464,6 +7464,7 @@ GameObject:
   - component: {fileID: 806188542}
   - component: {fileID: 806188541}
   - component: {fileID: 806188544}
+  - component: {fileID: 806188545}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7570,6 +7571,18 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &806188545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806188540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0187701dd7471fa40a4c71945659f02d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &806372648
 GameObject:
   m_ObjectHideFlags: 0
@@ -19651,15 +19664,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1157898351772164726, guid: e387f8341df09a14199792e8fe2af788, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.110335514
+      value: 0.11033551
       objectReference: {fileID: 0}
     - target: {fileID: 1157898351772164726, guid: e387f8341df09a14199792e8fe2af788, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000004275331
+      value: 0.000000004275331
       objectReference: {fileID: 0}
     - target: {fileID: 1157898351772164726, guid: e387f8341df09a14199792e8fe2af788, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 4.7461873e-10
+      value: -4.7461873e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6003531953152010371, guid: e387f8341df09a14199792e8fe2af788, type: 3}
       propertyPath: m_LocalPosition.x
