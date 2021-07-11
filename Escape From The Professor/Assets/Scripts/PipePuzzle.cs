@@ -21,6 +21,7 @@ public class PipePuzzle : MonoBehaviour
 	public MouseClick fourteenScript;
 	public MouseClick fifteenScript;
 
+	public int _sceneNumber;
 	public bool result;
 
 
@@ -58,7 +59,7 @@ public class PipePuzzle : MonoBehaviour
 	        tenScript.position && elevenScript.position)
 	    {
 		    result = true;
-		    NextLevel(1);
+		    NextLevel(_sceneNumber);
 
 	    }
 
