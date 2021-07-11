@@ -19,6 +19,7 @@ public class LiftDoorAfterNote : MonoBehaviour
     void Start()
     {
         journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
+        audio = door.GetComponent<AudioSource>();   
     }
 
     // Update is called once per frame
