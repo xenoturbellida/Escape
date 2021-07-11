@@ -8,6 +8,7 @@ public class Note : MonoBehaviour
     public GameObject prompt;
     public GameObject note;
     public GameObject player;
+    public GameObject cameraToDisable;
     public bool needToShowNote;
     public bool near;
     public bool wasRead;
@@ -27,6 +28,7 @@ public class Note : MonoBehaviour
             wasRead = true;
             needToShowNote = !needToShowNote;
             player.SetActive(!needToShowNote);
+            cameraToDisable.SetActive(!needToShowNote);
             note.SetActive(needToShowNote);
             prompt.SetActive(!needToShowNote);
         }
