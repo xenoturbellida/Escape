@@ -12,12 +12,15 @@ public class Note : MonoBehaviour
     public bool needToShowNote;
     public bool near;
     public bool wasRead;
+    private AudioSource audio;
 
     void Start()
     {
         prompt.SetActive(false);
         player.SetActive(true);
         note.SetActive(false);
+        
+        audio = GetComponent<AudioSource>();
     }
 
 
@@ -27,6 +30,12 @@ public class Note : MonoBehaviour
         {
             wasRead = true;
             needToShowNote = !needToShowNote;
+
+            if (needToShowNote && !audio.isPlaying)
+            {
+                audio.Play();
+            }
+            
             player.SetActive(!needToShowNote);
             cameraToDisable.SetActive(!needToShowNote);
             note.SetActive(needToShowNote);
