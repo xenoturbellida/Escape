@@ -11,6 +11,7 @@ public class Pipe : MonoBehaviour
     public GameObject _camera;
 
     public GameObject prompt;
+    public bool cursorIsVisible;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class Pipe : MonoBehaviour
     {
         if (isRotated && Input.GetKeyDown(KeyCode.F))
         {
+            cursorIsVisible = true;
             _camera.SetActive(true);
             _person.SetActive(false);
             prompt.SetActive(false);
@@ -31,6 +33,7 @@ public class Pipe : MonoBehaviour
 
         if (isRotated && Input.GetKeyDown(KeyCode.Escape))
         {
+            cursorIsVisible = false;
             _camera.SetActive(false);
             _person.SetActive(true);
         }

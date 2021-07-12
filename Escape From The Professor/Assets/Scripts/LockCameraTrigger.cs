@@ -14,6 +14,7 @@ public class LockCameraTrigger : MonoBehaviour
     public GameObject prompt;
     public GameObject player;
     public int frame = 0;
+    public bool cursorIsVisible;
 
     void Start()
     {
@@ -37,6 +38,11 @@ public class LockCameraTrigger : MonoBehaviour
         else if (near && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Escape)))
         {
             cameraIsActive = !cameraIsActive;
+            cursorIsVisible = cameraIsActive;
+            if (lockPuzzle.wasSolved)
+            {
+                cursorIsVisible = false;
+            }
             cam.SetActive(cameraIsActive);
 
             playerIsActive = !playerIsActive;
