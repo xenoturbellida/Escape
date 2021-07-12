@@ -5,7 +5,7 @@ using UnityEngine;
 public class escapeGame : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
         if (Input.GetKey("escape"))
 		Application.Quit();
